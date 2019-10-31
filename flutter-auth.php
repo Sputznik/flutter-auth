@@ -28,14 +28,16 @@ function authentication(){
       'user_password' => $password
     ) );
 
-    if(is_wp_error($user)){
-      echo '';
-    }
 
-    if( class_exists('Application_Passwords') ){
+    if(is_wp_error($user)){
+      print_r($user);
+      //echo 'Error';
+    }
+    else if( class_exists('Application_Passwords') ){
+
       //print_r('Success');
       $app = new Application_Passwords;
-      list( $new_password, $new_item ) = $app->create_new_application_password( 1, 'yka_app' );
+      list( $new_password, $new_item ) = $app->create_new_application_password( $user->ID, 'yka_app' );
       echo $new_password;
       //return $new_password;
     }
