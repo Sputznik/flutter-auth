@@ -17,6 +17,7 @@ function authentication(){
   $username = base64_decode($_REQUEST['ukey']);
   $password = base64_decode($_REQUEST['pkey']);
 
+  //echo $username;
   //$username = "sam";
   //$password = "sam";
 
@@ -28,16 +29,18 @@ function authentication(){
     ) );
 
     if(is_wp_error($user)){
-      return '';
+      echo '';
     }
 
-    $app = new Application_Passwords;
-    list( $new_password, $new_item ) = $app->create_new_application_password( 1, 'yka_app' );
-    return $new_password;
-
+    if( class_exists('Application_Passwords') ){
+      //print_r('Success');
+      $app = new Application_Passwords;
+      list( $new_password, $new_item ) = $app->create_new_application_password( 1, 'yka_app' );
+      echo $new_password;
+      //return $new_password;
+    }
   }
 
-  return '';
   wp_die();
 
 }
