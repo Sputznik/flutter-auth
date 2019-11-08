@@ -38,7 +38,10 @@ function authentication(){
       $app = new Application_Passwords;
       list( $new_password, $new_item ) = $app->create_new_application_password( $user->ID, 'yka_app' );
       $data['new_password'] = $new_password;
-      $data['user'] = $user;
+
+      if(isset($user->data)){
+        $data['user'] = $user->data;
+      }
     }
   }
 
