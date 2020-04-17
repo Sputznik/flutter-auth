@@ -9,6 +9,9 @@ Text Domain: flutter-auth
 
 defined( 'ABSPATH' ) or die( 'Hey you cannot accesse this plugin, you silly human' );
 
+// Include custom Rest Api Support file
+include('custom-rest-api.php');
+
 add_action( 'wp_ajax_auth_with_flutter', 'authentication' );
 add_action( 'wp_ajax_nopriv_auth_with_flutter', 'authentication' );
 
