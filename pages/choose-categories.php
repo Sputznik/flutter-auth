@@ -4,22 +4,22 @@
 require_once plugin_dir_path( dirname(__FILE__) ).'/utils/categories-ajax-request.php';
 
 // Categories Page
-add_action( 'admin_menu', 'settings');
+add_action( 'admin_menu', 'flutterSettings');
 
-function settings(){
+function flutterSettings(){
   add_menu_page(
     'Choose Categories',
     'Choose Categories',
     'manage_options',
     'flutter_categories',
-    'settingsTemplate',
+    'flutterSettingsTemplate',
     'dashicons-cloud',
     110
   );
 }
 
 // Include the backend template
-function settingsTemplate(){ require_once plugin_dir_path( dirname(__FILE__) , 1 ).'/templates/category.php';}
+function flutterSettingsTemplate(){ require_once plugin_dir_path( dirname(__FILE__) , 1 ).'/templates/category.php';}
 
 // Register Settings
 add_action( 'admin_init', 'registerCategoryFields' );
