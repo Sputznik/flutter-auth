@@ -25,7 +25,7 @@ function settingsTemplate(){ require_once plugin_dir_path( dirname(__FILE__) , 1
 add_action( 'admin_init', 'registerCategoryFields' );
 function registerCategoryFields(){
   register_setting( 'flutter_categories_group', 'flutter-category-field' );
-  add_settings_section( 'flutter_categories_section','','sectionTitle','flutter_categories' );
+  add_settings_section( 'flutter_categories_section','','flutterSectionTitle','flutter_categories' );
   add_settings_field( 'flutter-category-field','Category List','categoriesField','flutter_categories', 'flutter_categories_section' );
 }
 
