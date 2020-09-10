@@ -29,7 +29,7 @@ function registerCategoryFields(){
   add_settings_field( 'flutter-category-field','Category List','categoriesField','flutter_categories', 'flutter_categories_section' );
 }
 
-function sectionTitle(){ echo "<h2>Choose Categories</h2>"; }
+function flutterSectionTitle(){ echo "<h2>Choose Categories</h2>"; }
 
 //Checkbox fields for all the post categories
 function categoriesField(){
